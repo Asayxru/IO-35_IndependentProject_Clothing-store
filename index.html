@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clothing Store — Головна</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">Clothing Store</a>
+      </div>
+
+      <nav class="navigation" aria-label="Основна навігація">
+        <ul class="nav-list">
+          <li><a class="nav-link active" href="index.html">Головна</a></li>
+          <li><a class="nav-link" href="catalog.html">Каталог</a></li>
+          <li><a class="nav-link" href="about.html">Про магазин</a></li>
+          <li><a class="nav-link" href="#contact">Контакти</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-btn" type="button" data-cart-open>
+          Кошик <span class="cart-count" data-cart-count>0</span>
+        </button>
+
+        <button class="burger-btn" type="button" aria-label="Відкрити меню" data-burger>
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" data-mobile-menu>
+      <button class="mobile-menu-close" type="button" aria-label="Закрити меню" data-mobile-close>×</button>
+      <a href="index.html" class="mobile-link">Головна</a>
+      <a href="catalog.html" class="mobile-link">Каталог</a>
+      <a href="about.html" class="mobile-link">Про магазин</a>
+      <a href="#contact" class="mobile-link">Контакти</a>
+    </div>
+    <div class="overlay" data-overlay></div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Інтернет-магазин одягу</h1>
+        <p>Підбери образ під сезон: базові речі, верхній одяг та аксесуари з адаптивним інтерфейсом.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="catalog.html">Перейти в каталог</a>
+          <a class="btn secondary" href="#collections">Переглянути колекції</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section class="section" id="collections">
+    <div class="container">
+      <h2 class="section-title">Колекції сезону</h2>
+
+      <div class="grid cards">
+        <article class="card">
+          <h3>Winter Essentials</h3>
+          <p>Теплі куртки, светри та шарфи.</p>
+          <a class="link" href="catalog.html?category=outerwear">Дивитися</a>
+        </article>
+
+        <article class="card">
+          <h3>Casual</h3>
+          <p>Футболки, худі, джинси на кожен день.</p>
+          <a class="link" href="catalog.html?category=casual">Дивитися</a>
+        </article>
+
+        <article class="card">
+          <h3>Accessories</h3>
+          <p>Кепки, ремені, сумки, рукавички.</p>
+          <a class="link" href="catalog.html?category=accessories">Дивитися</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOP PRODUCTS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Популярні товари</h2>
+      <p class="section-subtitle">Картки товарів із кнопкою додавання в кошик (демо-режим).</p>
+
+      <div class="product-grid" id="top-products">
+        <!-- rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Зворотний зв’язок</h2>
+      <p class="section-subtitle">Форма з базовою клієнтською валідацією.</p>
+
+      <form class="form" id="contact-form" novalidate>
+        <div class="form-row">
+          <label class="label" for="name">Ім’я</label>
+          <input class="input" type="text" id="name" name="name" placeholder="Ваше ім’я" required minlength="2" />
+          <div class="error" data-error-for="name"></div>
+        </div>
+
+        <div class="form-row">
+          <label class="label" for="email">Email</label>
+          <input class="input" type="email" id="email" name="email" placeholder="name@example.com" required />
+          <div class="error" data-error-for="email"></div>
+        </div>
+
+        <div class="form-row">
+          <label class="label" for="message">Повідомлення</label>
+          <textarea class="textarea" id="message" name="message" placeholder="Ваше повідомлення" required minlength="10"></textarea>
+          <div class="error" data-error-for="message"></div>
+        </div>
+
+        <button class="btn primary" type="submit">Надіслати</button>
+        <p class="form-success" id="form-success" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-title">Clothing Store</div>
+        <p class="footer-text">Навчальний проєкт з frontend-розробки. Демонстраційний магазин одягу.</p>
+      </div>
+      <div>
+        <div class="footer-title">Контакти</div>
+        <p class="footer-text">Email: support@clothing-store.demo</p>
+        <p class="footer-text">Телефон: +380 (00) 000-00-00</p>
+      </div>
+      <div>
+        <div class="footer-title">Навігація</div>
+        <a class="footer-link" href="catalog.html">Каталог</a>
+        <a class="footer-link" href="about.html">Про магазин</a>
+      </div>
+    </div>
+    <div class="footer-bottom">Київ — 2025</div>
+  </footer>
+
+  <!-- CART MODAL -->
+  <div class="modal" data-cart-modal aria-hidden="true" role="dialog" aria-label="Кошик покупок">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Кошик</h3>
+        <button class="modal-close" type="button" data-cart-close aria-label="Закрити">×</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="cart-list" data-cart-list></div>
+        <div class="cart-summary">
+          <span>Разом:</span>
+          <strong data-cart-total>0</strong>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn secondary" type="button" data-cart-clear>Очистити</button>
+        <button class="btn primary" type="button" data-cart-checkout>Оформити</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

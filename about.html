@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clothing Store — Про магазин</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">Clothing Store</a>
+      </div>
+
+      <nav class="navigation" aria-label="Основна навігація">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html">Головна</a></li>
+          <li><a class="nav-link" href="catalog.html">Каталог</a></li>
+          <li><a class="nav-link active" href="about.html">Про магазин</a></li>
+          <li><a class="nav-link" href="index.html#contact">Контакти</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-btn" type="button" data-cart-open>
+          Кошик <span class="cart-count" data-cart-count>0</span>
+        </button>
+
+        <button class="burger-btn" type="button" aria-label="Відкрити меню" data-burger>
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" data-mobile-menu>
+      <button class="mobile-menu-close" type="button" aria-label="Закрити меню" data-mobile-close>×</button>
+      <a href="index.html" class="mobile-link">Головна</a>
+      <a href="catalog.html" class="mobile-link">Каталог</a>
+      <a href="about.html" class="mobile-link">Про магазин</a>
+      <a href="index.html#contact" class="mobile-link">Контакти</a>
+    </div>
+    <div class="overlay" data-overlay></div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1 class="page-title">Про магазин</h1>
+      <p class="page-subtitle">Інформаційна сторінка: концепція, доставка та оплата (демо).</p>
+
+      <div class="grid two-col">
+        <article class="card">
+          <h2>Концепція</h2>
+          <p>Clothing Store — навчальний веб-застосунок, який демонструє побудову адаптивного інтерфейсу інтернет-магазину одягу з каталогом та кошиком.</p>
+          <p>У проєкті використано HTML5, CSS3 (grid/flex, медіа-запити) та JavaScript (події DOM, localStorage, фільтрація).</p>
+        </article>
+
+        <article class="card">
+          <h2>Доставка та оплата</h2>
+          <ul class="list">
+            <li>Доставка: кур’єр / пошта (демо-опис)</li>
+            <li>Оплата: картка / післяплата (демо-опис)</li>
+            <li>Повернення: 14 днів за умови збереження товарного вигляду</li>
+          </ul>
+        </article>
+      </div>
+
+      <section class="section compact">
+        <h2 class="section-title">Контакти</h2>
+        <p class="footer-text">Email: support@clothing-store.demo</p>
+        <p class="footer-text">Телефон: +380 (00) 000-00-00</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-title">Clothing Store</div>
+        <p class="footer-text">Сторінка “Про магазин” у багатосторінковому застосунку.</p>
+      </div>
+      <div>
+        <div class="footer-title">Навігація</div>
+        <a class="footer-link" href="index.html">Головна</a>
+        <a class="footer-link" href="catalog.html">Каталог</a>
+      </div>
+    </div>
+    <div class="footer-bottom">Київ — 2025</div>
+  </footer>
+
+  <!-- CART MODAL -->
+  <div class="modal" data-cart-modal aria-hidden="true" role="dialog" aria-label="Кошик покупок">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Кошик</h3>
+        <button class="modal-close" type="button" data-cart-close aria-label="Закрити">×</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="cart-list" data-cart-list></div>
+        <div class="cart-summary">
+          <span>Разом:</span>
+          <strong data-cart-total>0</strong>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn secondary" type="button" data-cart-clear>Очистити</button>
+        <button class="btn primary" type="button" data-cart-checkout>Оформити</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
