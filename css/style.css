@@ -1,4 +1,4 @@
-/* ===== Base ===== */
+/*Base */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -20,7 +20,7 @@ a { color: inherit; }
 .page-title { margin: 0 0 8px; font-size: 34px; }
 .page-subtitle { margin: 0 0 24px; color: #555; }
 
-/* ===== Buttons ===== */
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -28,18 +28,27 @@ a { color: inherit; }
   gap: 8px;
   padding: 12px 16px;
   border-radius: 10px;
-  border: 1px solid #d0d7de;
+  background-color: #ffffff;
+  color: #111827;
+  border: 1px solid #111827;
   text-decoration: none;
   cursor: pointer;
   font-weight: 600;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
 }
-.btn.primary { background: #111827; color: #fff; border-color: #111827; }
-.btn.secondary { background: #fff; color: #111827; }
+.btn:hover {
+  background-color: #111827; 
+  color: #ffffff;           
+  border-color: #111827;
+}
 .btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
-/* ===== Header ===== */
+/* Header*/
 .header {
-  background: #ffffff;
+  background: #bdbdbd;
   border-bottom: 1px solid #e5e5e5;
   position: sticky;
   top: 0;
@@ -100,7 +109,7 @@ a { color: inherit; }
   cursor: pointer;
 }
 
-/* ===== Mobile menu ===== */
+/*Mobile menu*/
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -147,18 +156,24 @@ a { color: inherit; }
   .burger-btn { display: inline-flex; }
 }
 
-/* ===== Hero ===== */
 .hero {
-  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+   background-image:
+    linear-gradient(
+      rgba(2, 2, 3, 0.842),
+      rgba(0, 0, 0, 0.856)
+    ),
+    url("../assets/images/hero-bg.jpg");
   color: #fff;
   padding: 80px 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .hero-content { max-width: 720px; }
 .hero h1 { margin: 0 0 12px; font-size: 44px; }
 .hero p { margin: 0 0 22px; color: rgba(255,255,255,0.85); font-size: 18px; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
-/* ===== Cards / grids ===== */
 .grid { display: grid; gap: 16px; }
 .grid.cards { grid-template-columns: repeat(3, 1fr); }
 .grid.two-col { grid-template-columns: repeat(2, 1fr); }
@@ -182,7 +197,6 @@ a { color: inherit; }
   .hero h1 { font-size: 34px; }
 }
 
-/* ===== Product grid ===== */
 .product-grid {
   display: grid;
   gap: 16px;
@@ -230,7 +244,7 @@ a { color: inherit; }
 @media (max-width: 850px)  { .product-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px)  { .product-grid { grid-template-columns: 1fr; } }
 
-/* ===== Filters ===== */
+/*Filters */
 .filters {
   display: grid;
   grid-template-columns: 1.2fr 1fr 1fr 1fr;
@@ -267,7 +281,7 @@ a { color: inherit; }
   .filters { grid-template-columns: 1fr; }
 }
 
-/* ===== Form ===== */
+/* Form  */
 .form {
   background: #fff;
   border: 1px solid #e5e5e5;
@@ -280,10 +294,10 @@ a { color: inherit; }
 .error { color: #b91c1c; font-size: 12px; margin-top: 6px; min-height: 16px; }
 .form-success { margin: 12px 0 0; font-weight: 700; color: #065f46; }
 
-/* ===== Footer ===== */
+/*Footer*/
 .footer {
-  border-top: 1px solid #e5e5e5;
-  background: #fff;
+  border-top: 1px solid #bbbaba;
+  background: #cccccc;
   padding: 26px 0 0;
 }
 .footer-grid {
@@ -307,7 +321,7 @@ a { color: inherit; }
   .footer-grid { grid-template-columns: 1fr; }
 }
 
-/* ===== Modal (Cart) ===== */
+/*Modal (Cart)*/
 .modal {
   position: fixed;
   inset: 0;
@@ -369,4 +383,70 @@ a { color: inherit; }
   padding-top: 12px;
   border-top: 1px solid #e5e5e5;
   margin-top: 12px;
+}
+/*Collections slider*/
+.collections-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.collections-track {
+  position: relative;
+}
+
+.collection-slide {
+  display: none;
+  position: relative;
+}
+
+.collection-slide.active {
+  display: block;
+}
+
+.collection-slide img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.collection-content {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  max-width: 360px;
+}
+
+.collection-content h3 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.collection-content p {
+  margin: 0 0 14px;
+  font-size: 14px;
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #c7c7c7;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #111827;
 }

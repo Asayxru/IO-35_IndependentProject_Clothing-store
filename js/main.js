@@ -24,12 +24,12 @@
   mobileClose?.addEventListener('click', closeMenu);
   overlay?.addEventListener('click', closeMenu);
 
-  // Close menu on mobile link click
+  // Close menu on mobile
   document.querySelectorAll('.mobile-link').forEach((a) => {
     a.addEventListener('click', closeMenu);
   });
 
-  // Contact form validation (index.html only)
+  // Contact form validation
   const form = document.getElementById('contact-form');
   if (form) {
     const success = document.getElementById('form-success');
@@ -73,13 +73,12 @@
 
       if (!ok) return;
 
-      // Demo submit
       form.reset();
       if (success) success.textContent = 'Повідомлення надіслано (демо-режим).';
     });
   }
 
-  // Render top products (index.html only)
+  // Render top products
   const topContainer = document.getElementById('top-products');
   if (topContainer && window.CATALOG_PRODUCTS?.length) {
     const top = window.CATALOG_PRODUCTS.slice(0, 4);
@@ -149,4 +148,34 @@
       .replaceAll('"', '&quot;')
       .replaceAll("'", '&#039;');
   }
+})();
+
+//Collections slider
+(function () {
+  const slides = document.querySelectorAll('.collection-slide');
+  const dots = document.querySelectorAll('.dot');
+
+  if (!slides.length) return;
+
+  let current = 0;
+  const interval = 5000;
+
+  function showSlide(index) {
+    slides.forEach((s, i) => {
+      s.classList.toggle('active', i === index);
+      dots[i].classList.toggle('active', i === index);
+    });
+    current = index;
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      showSlide(i);
+    });
+  });
+
+  setInterval(() => {
+    const next = (current + 1) % slides.length;
+    showSlide(next);
+  }, interval);
 })();

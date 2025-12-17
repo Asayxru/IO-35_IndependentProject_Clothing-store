@@ -1,4 +1,4 @@
-// catalog.js — products data + render + filter/sort/search
+// catalog.js products data + render + filter/sort/search
 (function () {
 const PRODUCTS = [
   {
